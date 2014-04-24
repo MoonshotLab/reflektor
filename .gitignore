@@ -1,0 +1,6 @@
+face-recognizer
+.DS_Store
+faces.csv
+faces/*
+!faces/.gitkeep
+haarcascade_frontalface_alt.xml
