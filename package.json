@@ -1,0 +1,15 @@
+{
+  "name": "reflektor",
+  "version": "0.0.0",
+  "description": "... something",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joe Longstreet",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.34.0",
+    "cheerio": "^0.15.0"
+  }
+}

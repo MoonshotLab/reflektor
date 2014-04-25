@@ -4,3 +4,4 @@ faces.csv
 faces/*
 !faces/.gitkeep
 haarcascade_frontalface_alt.xml
+node_modules
