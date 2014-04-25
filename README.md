@@ -7,8 +7,8 @@
 4. If a face is detected, save to a temp dir
 
 ### Barkley Partner Parser
-1. Visit JunkDrawer's Partner Info page
-2. Parse the page and look for all the names
+x Visit JunkDrawer's Partner Info page
+x Parse the page and look for all the names
 3. Store the name, id, and picture in a new mongo record
 
 ### Web App

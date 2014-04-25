@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "request": "^2.34.0",
-    "cheerio": "^0.15.0"
+    "cheerio": "^0.15.0",
+    "mongodb": "^1.4.2"
   }
 }
