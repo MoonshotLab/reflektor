@@ -1,3 +1,8 @@
+## Jobs you can run
+* Fetch Barkley partner data from Junk Drawer. `junkDrawer.updatePartnerRecords`
+* Fetch Barkley partner photos `junkDrawer.fetchUserPhotos`. This will put them in a temp directory on your machine.
+
+
 ## Todo
 
 ### Camera App
@@ -9,7 +14,7 @@
 ### Barkley Partner Parser
 x Visit JunkDrawer's Partner Info page
 x Parse the page and look for all the names
-3. Store the name, id, and picture in a new mongo record
+x Store the name, id, and picture in a new mongo record
 
 ### Web App
 1. Serve a random pic from the temp directory

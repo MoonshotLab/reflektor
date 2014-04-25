@@ -1,7 +1,12 @@
-face-recognizer
-.DS_Store
-faces.csv
 faces/*
 !faces/.gitkeep
+
+tmp/*
+!tmp/.gitkeep
+
+face-recognizer
+faces.csv
 haarcascade_frontalface_alt.xml
+
+.DS_Store
 node_modules
