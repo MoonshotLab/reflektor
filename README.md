@@ -1,6 +1,11 @@
-## Jobs you can run
-* Fetch Barkley partner data from Junk Drawer. `junkDrawer.updatePartnerRecords`
-* Fetch Barkley partner photos `junkDrawer.fetchUserPhotos`. This will put them in a temp directory on your machine.
+`NODE_TLS_REJECT_UNAUTHORIZED=0 node lib/jobs.js`
+
+
+## Setup
+* Install graphics magick
+* Install opencv
+* Install node
+* `npm install`
 
 
 ## Todo
@@ -15,6 +20,11 @@
 x Visit JunkDrawer's Partner Info page
 x Parse the page and look for all the names
 x Store the name, id, and picture in a new mongo record
+x Look for a face in the photo
+x Crop it to face dimensions
+x Store it in the faces dir with it's mongo record
+7. Keep CV from barfing all over itself - too much processing...
+7. Delete old photo from tmp
 
 ### Web App
 1. Serve a random pic from the temp directory
