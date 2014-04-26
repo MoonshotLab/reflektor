@@ -26,13 +26,13 @@ jobs.createMissingPartnerData();
 6. If certain, drop photo in correct faces dir
 
 ### Barkley Partner Parser
-x Visit JunkDrawer's Partner Info page
-x Parse the page and look for all the names
-x Store the name, id, and picture in a new mongo record
-x Look for a face in the photo
-x Crop it to face dimensions
-x Store it in the faces dir with it's mongo record
-x use crypto to generate hash
+* Visit JunkDrawer's Partner Info page
+* Parse the page and look for all the names
+* Store the name, id, and picture in a new mongo record
+* Look for a face in the photo
+* Crop it to face dimensions
+* Store it in the faces dir with it's mongo record
+* use crypto to generate hash
 
 ### Face Verifier
 1. Get a record from the photoqueue

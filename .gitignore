@@ -1,6 +1,9 @@
 faces/*
 !faces/.gitkeep
 
+photo-queue/*
+!photo-queue/.gitkeep
+
 tmp/*
 !tmp/.gitkeep
 
