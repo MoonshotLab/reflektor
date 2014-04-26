@@ -7,7 +7,7 @@
 
 cv::CascadeClassifier face_cascade;
 
-static void read_csv(std::string filename, std::vector<cv::Mat> images, std::vector<int> labels){
+static void read_csv(std::string filename, std::vector<cv::Mat>& images, std::vector<int>& labels){
   std::ifstream file(filename, std::ifstream::in);
   std::string line, path, class_label;
 
