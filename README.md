@@ -1,6 +1,3 @@
-`NODE_TLS_REJECT_UNAUTHORIZED=0 node lib/jobs.js`
-
-
 ## Setup
 * Install graphics magick
 * Install opencv
@@ -8,13 +5,25 @@
 * `npm install`
 
 
+## Jobs
+Create Missing Partner Data:
+```javascript
+NODE_TLS_REJECT_UNAUTHORIZED=0 node
+var jobs = require('./libs/jobs');
+jobs.createMissingPartnerData();
+```
+
+
 ## Todo
 
-### Camera App
-1. A plane is broken
-2. Take a picture
-3. Look for faces in the picture
-4. If a face is detected, save to a temp dir
+### Photo Collector
+1. When a plane is broken
+2. Take a picture using the usb webcam
+3. Save the image to disk
+4. Look for faces in the picture and determine certainty
+5. If not x% certain, write a record in the photo queue collection
+   stating location certainty, and best guess
+6. If certain, drop photo in correct faces dir
 
 ### Barkley Partner Parser
 x Visit JunkDrawer's Partner Info page
@@ -24,13 +33,18 @@ x Look for a face in the photo
 x Crop it to face dimensions
 x Store it in the faces dir with it's mongo record
 x use crypto to generate hash
-- make readme better
 
-### Web App
-1. Serve a random pic from the temp directory
-2. Make a best guess as to who the person is and make a user verify it
+### Face Verifier
+1. Get a record from the photoqueue
+2. Display, the image with the computer's best guess (contained in queue record)
 3. User can verify, say it's someone else, or say it's nobody that works here
-4. Rewrite the csv every time a new one is saved
+
+### Display
+1. On startup, generate the .csv
+2. Camera detects people walking by
+3. Compares the video stream to it's local photo db
+4. If match is found, pull down user record
+5. Read aloud and display...
 
 
 ## Compiling the C++ application
