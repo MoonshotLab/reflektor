@@ -2,7 +2,7 @@
   "name": "reflektor",
   "version": "0.0.1",
   "description": "... something",
-  "main": "",
+  "main": "web.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +14,7 @@
     "mongodb": "^1.4.2",
     "opencv": "^0.5.0",
     "gm": "^1.14.2",
-    "q": "^1.0.1"
+    "q": "^1.0.1",
+    "express": "^4.1.0"
   }
 }
