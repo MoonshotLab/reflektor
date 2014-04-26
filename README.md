@@ -23,8 +23,8 @@ x Store the name, id, and picture in a new mongo record
 x Look for a face in the photo
 x Crop it to face dimensions
 x Store it in the faces dir with it's mongo record
-7. Keep CV from barfing all over itself - too much processing...
-7. Delete old photo from tmp
+x use crypto to generate hash
+- make readme better
 
 ### Web App
 1. Serve a random pic from the temp directory
