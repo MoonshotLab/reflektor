@@ -13,6 +13,20 @@ app.get('/', function(req, res){
   res.redirect('/face-verifier.html');
 });
 
+app.get('/all-users', function(req, res){
+  mongoClient.getAllPartners()
+    .then(function(partners){
+
+      partners.sort(function(a, b){
+        if(a.lastName < b.lastName) return -1;
+        if(a.lastName > b.lastName) return 1;
+        return 0;
+      });
+
+      res.send(partners);
+    });
+});
+
 app.get('/next-photo-in-queue', function(req, res){
   mongoClient.getQueueItem()
     .then(function(queueItem){
