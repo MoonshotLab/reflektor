@@ -1,3 +1,21 @@
 body{
-  background-color: rgba(0,0,0,.1);
+  background-color: rgba(0,0,0,.05);
+}
+
+
+body.face-verifier .image{
+  background-size: contain;
+  height: 300px;
+  border: 2px solid white;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+body.face-verifier h1{
+  margin-bottom: 30px;
+}
+
+body.face-verifier .form-control{
+  margin-bottom: 5px;
 }

@@ -8,7 +8,28 @@
     <script src="/vendor/jquery.min.js"></script>
     <script src="/face-verifier.js"></script>
   </head>
-  <body>
-    <h1>WELCOME TO MY WEB PAGE!</h1>
+  <body class="face-verifier">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Who's stupid face is this?</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="image" style="background-image:url('/joe_longstreet.jpg');"></div>
+        </div>
+        <div class="col-sm-8">
+          <select class="form-control">
+            <option>Joe Longstreet</option>
+          </select>
+          <a class='btn btn-primary' href='#'>Confirm Person</a>
+          <a class='btn btn-danger' href='#'>This is nobody, throw it away</a>
+        </div>
+      </div>
+
+    </div>
   </body>
 </html>
