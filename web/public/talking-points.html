@@ -4,28 +4,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="vendor/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="face-verifier.css" />
+    <link rel="stylesheet" href="talking-points.css" />
     <script src="/vendor/jquery.min.js"></script>
     <script src="/utils.js"></script>
-    <script src="/face-verifier.js"></script>
+    <script src="/talking-points.js"></script>
   </head>
-  <body class="face-verifier">
+  <body class="talking-points">
     <div class="container">
 
       <div class="row">
         <div class="col-sm-12">
-          <h1>Who's stupid face is this?</h1>
+          <h1>Talking Points</h1>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-4">
-          <div id="photo" class="image" data-queue-id=""></div>
-        </div>
-        <div class="col-sm-8">
           <select class="form-control" id="user-selector"></select>
-          <a class='btn btn-primary' id='confirm-user' href='#'>Confirm Person</a>
-          <a class='btn btn-danger' id='trash-photo' href='#'>This is nobody, throw it away</a>
+          <div id='user'></div>
+        </div>
+
+        <div class="col-sm-8">
+          <textarea class="form-control" placeholder="What do you want to say to this person?"></textarea>
+          <a class='btn btn-primary' id='submit-point' href='#'>Submit</a>
         </div>
       </div>
 

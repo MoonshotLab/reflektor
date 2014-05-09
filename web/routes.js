@@ -7,6 +7,19 @@ exports.home = function(req, res){
 };
 
 
+exports.talkingPoints = function(req, res){
+  res.redirect('/talking-points.html');
+};
+
+
+exports.getUser = function(req, res){
+  mongoClient.getUserRecord(req.params.id)
+    .then(function(user){
+      res.send(user);
+    });
+};
+
+
 exports.allUsers = function(req, res){
   mongoClient.getAllPartners()
     .then(function(partners){
