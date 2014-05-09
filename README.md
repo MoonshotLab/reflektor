@@ -1,50 +1,30 @@
-## Setup
-* Install graphics magick
-* Install opencv
-* Install node
-* `npm install`
+## What is this thing?
+A face detection application which identifies a passerby by name and creates a personalized message. It's made of several parts, all of which are currently running on a raspberry pi.
+
+### Barkley Partner Parser
+Reaches out to Barkley's intranet (junk drawer) to look for updated user information. If new users are found, the app will update the local db with the additional users. Also handy to set up for the first time.
+
+### Photo Collector
+A motion detector which acts as a digital trip wire. Anytime the sensor is activated, the webcam takes a quick snap of the person. These photos act as a reference set for the real time face detection and new photos are added to the photo queue.
+
+### Web Application
+* Face Verifier - used to help a human train the computer to recognize faces.
+* Talking Points - used to establish talking points with individual users.
+
+### Reflektor
+Recognizes users as they walk by and reads them a personalized message.
 
 
-## Jobs
-Create Missing Partner Data:
-```javascript
-NODE_TLS_REJECT_UNAUTHORIZED=0 node
-var jobs = require('./libs/jobs');
-jobs.createMissingPartnerData();
-```
+## Setting up and Installing Dependencies
+I've used the standard [NOOBS](http://www.raspberrypi.org/downloads/) Raspbian installation to set up my Raspberry pi. Install the following:
+* [OpenCV](http://mitchtech.net/raspberry-pi-opencv/)
+* [Node](http://nodejs.org/)
+* Node Dependencies - `npm install`
+* [MongoDB](http://c-mobberley.com/wordpress/2013/10/14/raspberry-pi-mongodb-installation-the-working-guide/)
 
 
 ## Todo
-
-### Photo Collector
-x When a plane is broken
-x Take a picture using the usb webcam
-x Save the image to disk
-x Look for faces in the picture and determine certainty
-5. Write a record in the photo queue collection
-   stating location certainty, and best guess
-x If certain, drop photo in correct faces dir
-
-### Barkley Partner Parser
-* Visit JunkDrawer's Partner Info page
-* Parse the page and look for all the names
-* Store the name, id, and picture in a new mongo record
-* Look for a face in the photo
-* Crop it to face dimensions
-* Store it in the faces dir with it's mongo record
-* use crypto to generate hash
-
-### Face Verifier
-1. Get a record from the photoqueue
-2. Display, the image with the computer's best guess (contained in queue record)
-3. User can verify, say it's someone else, or say it's nobody that works here
-
-### Display
-1. On startup, generate the .csv
-2. Camera detects people walking by
-3. Compares the video stream to it's local photo db
-4. If match is found, pull down user record
-5. Read aloud and display...
+* Create a shell interface to start each of these applications.
 
 
 ## Compiling the C++ application

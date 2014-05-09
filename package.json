@@ -1,8 +1,8 @@
 {
   "name": "reflektor",
   "version": "0.0.1",
-  "description": "... something",
-  "main": "web.js",
+  "description": "A face detection application",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
