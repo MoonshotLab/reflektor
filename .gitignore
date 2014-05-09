@@ -8,8 +8,7 @@ tmp/*
 !tmp/.gitkeep
 
 face-recognizer
-faces.csv
-haarcascade_frontalface_alt.xml
+config/faces.csv
 
 .DS_Store
 node_modules

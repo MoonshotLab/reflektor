@@ -26,6 +26,6 @@ int main(int arc, char **argv){
   std::vector <cv::Mat> images;
   std::vector <int> labels;
 
-  face_cascade.load("haarcascade_frontalface_alt.xml");
+  face_cascade.load("config/haarcascade_frontalface_alt.xml");
   read_csv("faces.csv", images, labels);
 }
