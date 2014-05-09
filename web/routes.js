@@ -1,3 +1,7 @@
+var mongoClient = require('../lib/mongo-client');
+var path = require('path');
+
+
 exports.home = function(req, res){
   res.redirect('/face-verifier.html');
 };

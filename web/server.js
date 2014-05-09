@@ -1,8 +1,5 @@
 var express = require('express');
-var path = require('path');
-var mongoClient = require('./lib/mongo-client');
-var faces = require('./lib/faces');
-var routes = require('./lib/routes');
+var routes = require('./routes');
 
 var app = express();
 var port = process.env.PORT || 3000;
