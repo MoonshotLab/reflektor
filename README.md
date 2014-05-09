@@ -17,13 +17,13 @@ jobs.createMissingPartnerData();
 ## Todo
 
 ### Photo Collector
-1. When a plane is broken
-2. Take a picture using the usb webcam
-3. Save the image to disk
-4. Look for faces in the picture and determine certainty
-5. If not x% certain, write a record in the photo queue collection
+x When a plane is broken
+x Take a picture using the usb webcam
+x Save the image to disk
+x Look for faces in the picture and determine certainty
+5. Write a record in the photo queue collection
    stating location certainty, and best guess
-6. If certain, drop photo in correct faces dir
+x If certain, drop photo in correct faces dir
 
 ### Barkley Partner Parser
 * Visit JunkDrawer's Partner Info page
