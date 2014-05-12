@@ -20,6 +20,14 @@ exports.createTalkingPoint = function(req, res){
 };
 
 
+exports.destroyTalkingPoint = function(req, res){
+  mongoClient.destroyTalkingPoint(req.query)
+    .then(function(){
+      res.send({'ok' : true});
+    });
+};
+
+
 exports.getUser = function(req, res){
   mongoClient.getUserRecord(req.params.id)
     .then(function(user){
