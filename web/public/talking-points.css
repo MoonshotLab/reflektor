@@ -5,3 +5,21 @@ body.talking-points textarea{
 body.talking-points h1{
   margin-bottom: 30px;
 }
+
+body.talking-points h2{
+  margin: 0;
+}
+
+body.talking-points #user, body.talking-points #talking-points{
+  margin-top: 60px;
+}
+
+body.talking-points ul{
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.2em;
+}
+
+body.talking-points li{
+  margin-bottom: 10px;
+}
