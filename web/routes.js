@@ -14,16 +14,16 @@ exports.talkingPoints = function(req, res){
 
 exports.createTalkingPoint = function(req, res){
   mongoClient.addTalkingPoint(req.query)
-    .then(function(){
-      res.send({'ok' : true});
+    .then(function(record){
+      res.send(record);
     });
 };
 
 
 exports.destroyTalkingPoint = function(req, res){
   mongoClient.destroyTalkingPoint(req.query)
-    .then(function(){
-      res.send({'ok' : true});
+    .then(function(record){
+      res.send(record);
     });
 };
 

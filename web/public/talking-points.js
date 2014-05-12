@@ -33,9 +33,7 @@ $(function(){
       $.ajax({
         url: '/talking-points/new',
         data: {userId: userId, talkingPoint: talkingPoint},
-        success: function(){
-          alert('Saved!');
-        }
+        success: updateUserInfo
       });
     }
   });
@@ -50,7 +48,8 @@ $(function(){
 
       $.ajax({
         url: '/talking-points/destroy',
-        data: {userId: userId, index: index}
+        data: {userId: userId, index: index},
+        success: updateUserInfo
       });
     }
   });
