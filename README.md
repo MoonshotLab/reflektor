@@ -21,6 +21,7 @@ I've used the standard [NOOBS](http://www.raspberrypi.org/downloads/) Raspbian i
 * [Node](http://nodejs.org/)
 * Node Dependencies - `npm install`
 * [MongoDB](http://c-mobberley.com/wordpress/2013/10/14/raspberry-pi-mongodb-installation-the-working-guide/)
+* [fswebcam] - `apt-get install fswebcam`
 
 
 ## Todo
