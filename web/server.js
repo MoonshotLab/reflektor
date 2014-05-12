@@ -10,6 +10,7 @@ app.use(express.static(__dirname + '/photo-queue'));
 app.get('/', routes.home);
 app.get('/all-users', routes.allUsers);
 app.get('/talking-points', routes.talkingPoints);
+app.get('/talking-points/new', routes.createTalkingPoint);
 app.get('/user/:id', routes.getUser);
 app.get('/next-photo-in-queue', routes.nextPhotoInQueue);
 app.get('/mark-record/:queueId', routes.markRecords);

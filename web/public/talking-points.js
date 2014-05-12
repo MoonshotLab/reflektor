@@ -26,7 +26,18 @@ $(function(){
 
 
   $('#submit-point').click(function(){
+    var userId = $('#user-selector').val();
+    var talkingPoint = $('#talking-point').val();
 
+    if(userId && talkingPoint){
+      $.ajax({
+        url: '/talking-points/new',
+        data: {userId: userId, talkingPoint: talkingPoint},
+        success: function(){
+          alert('Saved!');
+        }
+      });
+    }
   });
 
 
@@ -34,6 +45,7 @@ $(function(){
 
 
 var updateUserInfo = function(user){
+  console.log(user);
   var template = [
     '<h2>' + user.firstName + ' ' + user.lastName + '</h2>'
   ].join('');

@@ -12,6 +12,14 @@ exports.talkingPoints = function(req, res){
 };
 
 
+exports.createTalkingPoint = function(req, res){
+  mongoClient.addTalkingPoint(req.query)
+    .then(function(){
+      res.send({'ok' : true});
+    });
+};
+
+
 exports.getUser = function(req, res){
   mongoClient.getUserRecord(req.params.id)
     .then(function(user){
