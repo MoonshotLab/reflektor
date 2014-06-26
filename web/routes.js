@@ -51,8 +51,8 @@ exports.allUsers = function(req, res){
 };
 
 
-exports.nextPhotoInQueue = function(req, res){
-  mongoClient.getQueueItem()
+exports.getRandomPhotoInQueue = function(req, res){
+  mongoClient.getRandomQueueItem()
     .then(function(queueItem){
       res.send(queueItem);
     });

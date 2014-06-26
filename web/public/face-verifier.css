@@ -1,6 +1,6 @@
 body.face-verifier .image{
-  background-size: contain;
-  height: 300px;
+  background-size: cover;
+  height: 500px;
   border: 2px solid white;
   background-color: rgba(0,0,0,.05);;
   background-repeat: no-repeat;
@@ -9,6 +9,15 @@ body.face-verifier .image{
 
 body.face-verifier h1{
   margin-bottom: 30px;
+}
+
+body.face-verifier .chosen-container{
+  width: 100% !important;
+}
+
+body.face-verifier .btn{
+  display: block;
+  margin-bottom: 10px;
 }
 
 body.face-verifier .chosen-container{
