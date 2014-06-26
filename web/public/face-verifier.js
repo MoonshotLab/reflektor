@@ -9,6 +9,8 @@ $(function(){
         $userSelector.append(selectItem);
       });
 
+      $userSelector.chosen();
+
       loadNewPhoto();
     }
   });

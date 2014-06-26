@@ -11,6 +11,6 @@ body.face-verifier h1{
   margin-bottom: 30px;
 }
 
-body.face-verifier .form-control{
-  margin-bottom: 5px;
+body.face-verifier .chosen-container{
+  margin-bottom: 15px;
 }
