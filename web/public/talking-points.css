@@ -10,16 +10,32 @@ body.talking-points h2{
   margin: 0;
 }
 
-body.talking-points #user, body.talking-points #talking-points{
-  margin-top: 60px;
-}
-
 body.talking-points ul{
   list-style-type: none;
   padding: 0;
   font-size: 1.2em;
 }
 
+
 body.talking-points li{
-  margin-bottom: 10px;
+  padding-bottom: 15px;
+  padding-top: 25px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+body.talking-points .user-container{
+  margin-top: 30px;
+  background-color: rgba(0,0,0,.05);
+  border-top: 1px solid rgba(0,0,0,.2);
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  padding-bottom: 35px;
+}
+
+
+body.talking-points .pic{
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }

@@ -59,12 +59,21 @@ $(function(){
 var updateUserInfo = function(user){
 
   var userTemplate = [
-    '<h2 data-id=',
+    '<h3 data-id="',
     user._id,
-    '>',
+    '">',
       user.firstName + ' ' + user.lastName,
-    '</h2>'
+    '</h3>',
+    '<div class="pic" style="background-image:url(\'',
+    'https://junkdrawer.barkleyus.com/info/emppics/',
+      user.lastName,
+      ', ',
+      user.firstName,
+      '.jpg\')">',
+    '</div>'
   ].join('');
+
+  console.log(userTemplate)
 
   var talkingPoints = '';
   if(user.talkingPoints){
