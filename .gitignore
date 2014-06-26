@@ -4,9 +4,6 @@ faces/*
 photo-queue/*
 !photo-queue/.gitkeep
 
-tmp/*
-!tmp/.gitkeep
-
 face-recognizer
 config/faces.csv
 
