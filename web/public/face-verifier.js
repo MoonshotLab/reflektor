@@ -30,16 +30,25 @@ $(function(){
 
   $('#confirm-user').click(function(){
     var queueId = $('#photo').data('queue-id');
+    var userId = $userSelector.val();
     $.ajax({
-      url: '/mark-record/' + queueId,
-      success: loadNewPhoto
+      url: '/assign-queue-item/' + queueId + '?userId=' + userId,
+      success: function(res){
+        console.log('Succesfully added photo', res.photoId, 'to', res.user.id);
+        loadNewPhoto();
+      }, err: loadNewPhoto
     });
   });
 
   $('#trash-photo').click(function(){
+    var queueId = $('#photo').data('queue-id');
+
     $.ajax({
-      url: '/mark-record',
-      success: loadNewPhoto
+      url: '/delete-queue-item/' + queueId,
+      success: function(id){
+        console.log('Successfully deleted photo', id);
+        loadNewPhoto();
+      }, error: loadNewPhoto
     });
   });
 

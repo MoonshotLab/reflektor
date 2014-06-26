@@ -59,6 +59,23 @@ exports.getRandomPhotoInQueue = function(req, res){
 };
 
 
+exports.deleteQueueItem = function(req, res){
+  var queueId = req.params.queueId;
+
+  mongoClient.deleteQueueItem(queueId).then(function(recordId){
+    res.send({ deletedRecord : recordId });
+  });
+};
+
+
+exports.assignQueueItem = function(req, res){
+  mongoClient.assignQueueItem({
+    userId: req.query.userId,
+    queueId: req.params.queueId
+  }).then(res.send);
+};
+
+
 exports.markRecords = function(req, res){
   var userId = req.query.userId;
   var queueId = req.params.queueId;
