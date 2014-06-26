@@ -26,8 +26,7 @@ $(function(){
     }
   });
 
-
-  $('#submit-point').click(function(){
+  var submitTalkingPoint = function(){
     var userId = $('#user-selector').val();
     var talkingPoint = $('#talking-point').val();
 
@@ -38,6 +37,15 @@ $(function(){
         success: updateUserInfo
       });
     }
+  };
+
+
+  $('#submit-point').click(submitTalkingPoint);
+  $('#talking-point').keydown(function(e){
+    if(e.keyCode == 13){
+      e.preventDefault();
+      submitTalkingPoint(0);
+    }
   });
 
 
@@ -46,7 +54,7 @@ $(function(){
 
     if($target.hasClass('close')){
       var index = $('#talking-points').find('li').index($target.parent());
-      var userId = $('#user').find('h2').data('id');
+      var userId = $('#user').find('h3').data('id');
 
       $.ajax({
         url: '/talking-points/destroy',
@@ -61,9 +69,9 @@ $(function(){
 var updateUserInfo = function(user){
 
   var userTemplate = [
-    '<h3 data-id="',
+    '<h3 data-id=',
     user._id,
-    '">',
+    '>',
       user.firstName + ' ' + user.lastName,
     '</h3>',
     '<div class="pic" style="background-image:url(\'',
