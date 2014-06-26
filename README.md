@@ -4,6 +4,8 @@ A face detection application which identifies a passerby by name and verbally st
 ### Barkley Partner Parser
 Reaches out to Barkley's intranet (junk drawer) to look for updated user information. If new users are found, the app will update the local db with the additional users. Also handy to set up for the first time.
 
+There are some SSL errors when running the partner finder, so you'll need to include the env var `NODE_TLS_REJECT_UNAUTHORIZED = 0` when running. Example: `NODE_TLS_REJECT_UNAUTHORIZED=0 node .`
+
 ### Photo Collector
 A motion detector which acts as a digital trip wire. Anytime the sensor is activated, the webcam takes a quick snap of the person. These photos act as a reference set for the real time face detection and new photos are added to the photo queue.
 
