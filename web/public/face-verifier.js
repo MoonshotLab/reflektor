@@ -29,4 +29,6 @@ $(function(){
     });
   });
 
+  $('#skip').click(loadNewPhoto);
+
 });
