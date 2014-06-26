@@ -10,6 +10,8 @@ $(function(){
         var selectItem = createSelectTemplate(user);
         $userSelector.append(selectItem);
       });
+
+      $userSelector.chosen();
     }
   });
 
@@ -72,8 +74,6 @@ var updateUserInfo = function(user){
       '.jpg\')">',
     '</div>'
   ].join('');
-
-  console.log(userTemplate)
 
   var talkingPoints = '';
   if(user.talkingPoints){
