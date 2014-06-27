@@ -34,7 +34,7 @@ $(function(){
     $.ajax({
       url: '/assign-queue-item/' + queueId + '?userId=' + userId,
       success: function(res){
-        console.log('Succesfully added photo', res.photoId, 'to', res.user.id);
+        console.log('Succesfully added photo', res.faceFile, 'to', res.user.firstName, res.user.lastName);
         loadNewPhoto();
       }, err: loadNewPhoto
     });
