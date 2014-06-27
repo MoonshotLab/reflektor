@@ -38,7 +38,7 @@ exports.getUser = function(req, res){
 
 
 exports.allUsers = function(req, res){
-  mongoClient.getAllPartners()
+  mongoClient.getAllUsers()
     .then(function(partners){
 
       partners.sort(function(a, b){
