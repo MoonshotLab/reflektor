@@ -62,7 +62,10 @@ exports.getRandomPhotoInQueue = function(req, res){
 
 exports.deleteQueueItem = function(req, res){
   var queueId = req.params.queueId;
-
+  mongoClient.getQueueItem(queueId)
+    .then(function(queueItem){
+      utils.deleteFile(queueItem.path);
+    });
   mongoClient.deleteQueueItem(queueId).then(function(recordId){
     res.send({ deletedRecord : recordId });
   });
