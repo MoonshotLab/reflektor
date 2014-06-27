@@ -4,7 +4,7 @@ var loadNewPhoto = function(){
     success: function(data){
       var photoPath = data.path.replace('photo-queue', '');
       $('#photo').data('queue-id', data._id);
-      $('#photo').css('background-image', 'url(' + photoPath + ')');
+      $('#photo').attr('src', photoPath);
     }
   });
 };
