@@ -1,3 +1,9 @@
+// I wrote this because I didn't have the facial detection working
+// when we first set up the web cam. This will look for all photos
+// in a dir and delete the one's which don't have a face or have
+// more than one face.
+
+
 var fs = require('fs');
 var path = require('path');
 
