@@ -1,5 +1,6 @@
 var mongoClient = require('../lib/mongo-client');
-var path = require('path');
+var faceDetector = require('../lib/face-detector');
+var utils = require('../lib/utils');
 
 
 exports.home = function(req, res){
@@ -68,37 +69,27 @@ exports.deleteQueueItem = function(req, res){
 };
 
 
+// Meh... this is a real mess. Could be better
 exports.assignQueueItem = function(req, res){
-  mongoClient.assignQueueItem({
-    userId: req.query.userId,
-    queueId: req.params.queueId
-  }).then(res.send);
-};
+  mongoClient.getQueueItem(req.params.queueId)
+    .then(function(queueItem){
 
-
-exports.markRecords = function(req, res){
-  var userId = req.query.userId;
-  var queueId = req.params.queueId;
-  var fullPhotoPath = path.join(process.cwd(), 'photo-queue', queueId + '.jpg');
-
-  // If no user id is supplied, assume it's a non record
-  // and just delete it from the qeueue
-  if(!userId){
-    mongoClient.deleteQueueItem({
-      queueId: queueId
-    }).then( res.send({ 'updated' : true }) );
-  } else {
-
-    mongoClient.getUserRecord(userId)
-      .then(function(user){
-        user.fullPhoto = fullPhotoPath;
-        createFacesFromPhotos([user]);
-      })
-      .then(function(){
-        mongoClient.deleteQueueItem({
-          queueId: queueId
+      faceDetector.createFace(queueItem.path)
+        .then(function(faceFilePath){
+          mongoClient.addFaceToUser({
+            faceFilePath: faceFilePath,
+            userId: req.query.userId
+          })
+          .then(function(user){
+            utils.deleteFile(queueItem.path);
+            console.log('made a new face for', user.firstName, user.lastName, 'at', faceFilePath);
+            res.send({
+              user: user,
+              faceFile: faceFilePath
+            });
+          });
         });
-      })
-      .then( res.send({ 'updated' : true }) );
-  }
+    }).fail(function(e){
+      console.log(e);
+    });
 };
