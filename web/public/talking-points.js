@@ -67,7 +67,6 @@ $(function(){
 
 
 var updateUserInfo = function(user){
-
   var userTemplate = [
     '<h3 data-id=',
     user._id,
@@ -83,6 +82,19 @@ var updateUserInfo = function(user){
     '</div>'
   ].join('');
 
+  var photos = '';
+  if(user.photos){
+    user.photos.forEach(function(photo){
+      var template = [
+        '<li>',
+          '<img src="' + photo.replace('faces/', '') + '" />',
+        '</li>'
+      ].join('');
+
+      photos += template;
+    });
+  }
+
   var talkingPoints = '';
   if(user.talkingPoints){
     user.talkingPoints.forEach(function(point){
@@ -96,6 +108,7 @@ var updateUserInfo = function(user){
     });
   }
 
+  $('#face-photos').html(photos);
   $('#talking-points').html(talkingPoints);
   $('#user').html(userTemplate);
 };

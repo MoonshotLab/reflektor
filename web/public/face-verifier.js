@@ -22,7 +22,6 @@ $(function(){
       });
 
       $userSelector.chosen();
-
       loadNewPhoto();
     }
   });

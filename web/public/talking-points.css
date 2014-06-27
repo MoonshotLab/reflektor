@@ -16,8 +16,12 @@ body.talking-points ul{
   font-size: 1.2em;
 }
 
+body.talking-points ul#face-photos li{
+  display: inline-block;
+  margin: 10px;
+}
 
-body.talking-points li{
+body.talking-points ul#talking-points li{
   padding-bottom: 15px;
   padding-top: 25px;
   border-bottom: 1px solid rgba(0,0,0,.1);
