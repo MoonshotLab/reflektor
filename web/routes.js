@@ -81,6 +81,7 @@ exports.assignQueueItem = function(req, res){
             userId: req.query.userId
           })
           .then(function(user){
+            mongoClient.deleteQueueItem(queueItem._id);
             utils.deleteFile(queueItem.path);
             console.log('made a new face for', user.firstName, user.lastName, 'at', faceFilePath);
             res.send({
