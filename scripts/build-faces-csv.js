@@ -6,7 +6,6 @@ var fs = require('fs');
 var path = require('path');
 var mongoClient = require('../lib/mongo-client');
 
-
 mongoClient.events.once('ready', function(){
   mongoClient.getAllUsers()
     .then(generateCsvFromUsers)
@@ -40,6 +39,7 @@ var writeFile = function(csvString){
 var generateCsvFromUsers = function(users){
   var deferred = Q.defer();
   var csvString = '';
+  var iterator = 0;
 
   users.forEach(function(user){
     if(user.photos){
@@ -47,9 +47,17 @@ var generateCsvFromUsers = function(users){
         csvString += [
           photo,
           ';',
+          iterator,
+          ';',
           user._id,
+          ';',
+          user.firstName,
+          ' ',
+          user.lastName,
           '\n'
         ].join('');
+
+        iterator++;
       });
     }
   });
